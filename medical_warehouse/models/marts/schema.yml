@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_channels
+    description: "Dimension table containing metadata for each Telegram channel scraped."
+    columns:
+      - name: channel_key
+        description: "A unique MD5 hash generated from the channel name."
+        tests:
+          - unique
+          - not_null
+      - name: channel_name
+        description: "The original name of the Telegram channel."
+  - name: fact_messages
+    description: "Fact table containing individual messages and their metrics."
+    columns:
+      - name: message_id
+        description: "The primary key for each message."
+        tests:
+          - unique
+          - not_null
+      - name: view_count
+        description: "Number of views the message received."
+      - name: channel_key
+        description: "Foreign key linking to dim_channels."
+        tests:
+          - relationships:
+              to: ref('dim_channels')
+              field: channel_key
