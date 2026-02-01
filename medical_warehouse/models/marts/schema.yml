@@ -27,3 +27,6 @@ models:
           - relationships:
               to: ref('dim_channels')
               field: channel_key
+  
+  - name: fct_image_detections
+    description: "Results of YOLOv8 object detection joined with message metrics."

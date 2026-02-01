@@ -6,3 +6,4 @@ sources:
     schema: public
     tables:
       - name: raw_telegram_data
+      - name: raw_yolo_results
