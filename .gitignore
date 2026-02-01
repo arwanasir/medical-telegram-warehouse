@@ -28,6 +28,25 @@ data/processed/
 .DS_Store
 Thumbs.db
 
+venvm/
+
+!models/**/*.sql
 
 logs/
 *.log
+
+*.csv
+*.json
+*.sql
+*.pt
+
+target/
+dbt_packages/
+logs/
+profiles.yml
+venv/
+.venv/
+__pycache__/
+.pytest_cache/
+target/
+dbt_packages/
